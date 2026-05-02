@@ -1,0 +1,23 @@
+<section class="contact">
+
+  <h1>{{ contactInfo.title }}</h1>
+
+  <p>
+    {{ contactInfo.subtitle }}
+  </p>
+
+  <div class="contact__info">
+    <p>Email: {{ contactInfo.email }}</p>
+    <p>Phone: {{ contactInfo.phone }}</p>
+    <p>Location: {{ contactInfo.location }}</p>
+  </div>
+
+  <div class="contact__socials">
+    @for (social of contactInfo.socials; track social.name) {
+      <a [href]="social.link" target="_blank">
+        {{ social.name }}
+      </a>
+    }
+  </div>
+
+</section>

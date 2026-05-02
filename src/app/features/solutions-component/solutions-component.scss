@@ -1,3 +1,10 @@
+
+
+
+
+
+
+
 @use '../../../styles/variables' as v;
 @use '../../../styles/mixins' as m;
 
@@ -5,25 +12,50 @@
   @include m.section-padding;
   background: v.$color-bg-secondary;
 
+  /* ================= GRID LAYOUT ================= */
   &__inner {
-    max-width: 1280px;
+    max-width: 1300px;
+    max-height: 600px;
     margin: 0 auto;
+
     display: grid;
+    grid-template-columns: 1.8fr 1fr;
     grid-template-areas:
-      "header  header"
-      "feature grid";
-    grid-template-columns: 1fr 1fr;
-    gap: v.$space-lg;
+      "header header"
+      "feature main"
+      "grid grid";
+
+    gap: v.$space-md;
 
     @include m.tablet {
-      grid-template-areas: "header" "feature" "grid";
       grid-template-columns: 1fr;
+      grid-template-areas:
+        "header"
+        "feature"
+        "main"
+        "grid";
+    }
+
+    @include m.mobile {
+      grid-template-columns: 1fr;
+      grid-template-areas:
+        "header"
+        "feature"
+        "main"
+        "grid";
+      gap: v.$space-sm;
     }
   }
 
+  /* ================= HEADER ================= */
   &__header {
     grid-area: header;
     margin-bottom: v.$space-lg;
+    text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   }
 
   &__eyebrow {
@@ -34,9 +66,16 @@
     display: block;
     margin-bottom: v.$space-sm;
   }
+  .solutions__grid .solutions__card:nth-child(2) {
+  background: linear-gradient(
+    135deg,
+    rgba(272, 50, 74, 5.08),
+    rgba(0, 0, 0, 0.0)
+  )}
 
   &__title {
     font-size: clamp(2rem, 4vw, 3rem);
+
     mark {
       background: v.$color-accent;
       color: #fff;
@@ -45,6 +84,7 @@
     }
   }
 
+  /* ================= FEATURE ================= */
   &__feature-card {
     grid-area: feature;
     border-radius: v.$radius-xl;
@@ -53,8 +93,13 @@
     min-height: 280px;
     border: 1px solid v.$color-border;
 
+    @include m.mobile {
+      min-height: 200px;
+    }
+
     img {
-      width: 100%; height: 100%;
+      width: 100%;
+      height: 100%;
       object-fit: cover;
     }
 
@@ -62,7 +107,11 @@
       content: '';
       position: absolute;
       inset: 0;
-      background: linear-gradient(180deg, transparent 40%, rgba(0,0,0,0.85) 100%);
+      background: linear-gradient(
+        180deg,
+        transparent 40%,
+        rgba(0, 0, 0, 0.85) 100%
+      );
     }
   }
 
@@ -72,36 +121,67 @@
     left: v.$space-lg;
     right: v.$space-lg;
     z-index: v.$z-above;
+
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
     gap: v.$space-md;
 
+    @include m.mobile {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: v.$space-sm;
+    }
+
     p {
       font-size: 0.9rem;
-      color: rgba(255,255,255,0.85);
+      color: rgba(255, 255, 255, 0.85);
       max-width: 260px;
     }
   }
 
-  &__grid {
-    grid-area: grid;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: v.$space-md;
+  /* ================= MAIN CARD ================= */
+  &__card--main {
+    grid-area: main;
+    background: v.$color-accent-gradient;
+    border: none;
   }
 
+  /* ================= GRID ================= */
+  &__grid {
+    grid-area: grid;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: v.$space-md;
+
+    @include m.tablet {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @include m.mobile {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  /* ================= CARD ================= */
   &__card {
     @include m.glass-card;
     padding: v.$space-lg;
     position: relative;
+
     transition: border-color v.$transition-normal;
 
-    &:hover { border-color: rgba(232, 40, 74, 0.3); }
+    &:hover {
+      border-color: rgba(232, 40, 74, 0.3);
+    }
 
-    &--highlight {
-      background: v.$color-accent-gradient;
-      border-color: transparent;
+    &--special {
+      background: linear-gradient(
+        135deg,
+        rgba(232, 40, 74, 0.15),
+        rgba(0, 0, 0, 0.05)
+      );
     }
 
     &-icon {
@@ -118,7 +198,7 @@
 
     &-desc {
       font-size: 0.8rem;
-      color: rgba(255,255,255,0.65);
+      color: rgba(255, 255, 255, 0.65);
       line-height: 1.6;
     }
 
@@ -126,16 +206,22 @@
       position: absolute;
       bottom: v.$space-md;
       right: v.$space-md;
-      width: 32px; height: 32px;
+      width: 32px;
+      height: 32px;
       border-radius: 50%;
       background: v.$color-border;
       border: 1px solid v.$color-border;
       color: #fff;
       cursor: pointer;
+
       @include m.flex-center;
       font-size: 0.85rem;
+
       transition: background v.$transition-fast;
-      &:hover { background: v.$color-accent; }
+
+      &:hover {
+        background: v.$color-accent;
+      }
     }
   }
 }

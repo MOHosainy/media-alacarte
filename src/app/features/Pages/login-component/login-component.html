@@ -1,0 +1,40 @@
+<section class="login">
+
+  <div class="login__bg"></div>
+
+  <div class="login__card">
+
+    <h1 class="login__title">
+      {{ loginData.title }}
+    </h1>
+
+    <p class="login__subtitle">
+      {{ loginData.subtitle }}
+    </p>
+
+    <!-- EMAIL -->
+    <input
+      type="email"
+      [(ngModel)]="email"
+      [placeholder]="loginData.emailPlaceholder"
+      class="login__input"
+    />
+
+    <!-- PASSWORD -->
+    <input
+      type="password"
+      [(ngModel)]="password"
+      [placeholder]="loginData.passwordPlaceholder"
+      class="login__input"
+    />
+
+    <!-- BUTTON -->
+    <button class="login__btn" (click)="onLogin()">
+      {{ loginData.loginBtn }}
+    </button>
+
+    
+
+  </div>
+
+</section>

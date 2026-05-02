@@ -1,0 +1,92 @@
+@use '../../../../styles/variables' as v;
+@use '../../../../styles/mixins' as m;
+
+.platform {
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  padding: 120px 24px;
+
+  background:
+    radial-gradient(circle at top,
+      rgba(232, 40, 74, 0.15),
+      transparent 40%),
+    v.$color-bg-secondary;
+
+  overflow: hidden;
+}
+
+.platform__content {
+  max-width: 900px;
+
+  animation: fadeUp 0.9s ease;
+}
+
+.platform__title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+
+  font-family: v.$font-display;
+
+  color: white;
+
+  margin-bottom: 16px;
+}
+
+.platform__title span {
+  color: v.$color-accent;
+}
+
+.platform__subtitle {
+  font-size: 1.1rem;
+
+  color: rgba(255,255,255,0.75);
+
+  line-height: 1.8;
+
+  margin-bottom: 40px;
+}
+
+.platform__cta {
+  padding: 14px 32px;
+
+  border-radius: 999px;
+
+  border: none;
+
+  cursor: pointer;
+
+  font-size: 1rem;
+
+  color: white;
+
+  background: linear-gradient(135deg, #e8284a, #ff5c7a);
+
+  transition: 0.3s ease;
+
+  box-shadow: 0 10px 30px rgba(232, 40, 74, 0.3);
+}
+
+.platform__cta:hover {
+  transform: translateY(-4px) scale(1.03);
+
+  box-shadow: 0 15px 40px rgba(232, 40, 74, 0.4);
+}
+
+/* ================= ANIMATION ================= */
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

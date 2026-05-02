@@ -19,14 +19,182 @@ export class ContentService {
 
   getNavItems(): NavItem[] {
     return [
+       { label: 'Home', route: '/' },
       { label: 'The Platform', route: '/platform' },
       { label: 'Features',     route: '/features'  },
       { label: 'Benefits',     route: '/benefits'  },
-      { label: 'Request a Demo', route: '/demo'    },
+      { label: 'Request a Demo', route: '/request-a-demo' },
       { label: 'Contact Us',   route: '/contact'   },
       { label: 'About Us',     route: '/about'     },
+      //  { label: 'Login',        route: '/login'     },
     ];
   }
+
+  getContactInfo() {
+  return {
+    title: 'Let’s Build Smarter Media Campaigns',
+    subtitle:
+      'Reach out to our team and discover how Media Ala Carte can transform your advertising workflow.',
+    
+    email: 'hello@mediaalacarte.com',
+    phone: '01007012871',
+    location: 'Cairo, Egypt',
+
+    socials: [
+      {
+        name: 'LinkedIn',
+        link: 'https://www.linkedin.com/company/medialacarte/',
+      },
+      {
+        name: 'Instagram',
+        link: 'https://instagram.com/',
+      },
+    ],
+  };
+}
+
+
+getLoginData() {
+  return {
+    title: 'Welcome Back',
+    subtitle: 'Login to continue to Media Alacarte',
+    emailPlaceholder: 'Email Address',
+    passwordPlaceholder: 'Password',
+    loginBtn: 'Login',
+  };
+}
+
+
+
+getAboutData() {
+  return {
+    title: 'About Media Alacarte',
+    highlight: 'Media Alacarte',
+    text:
+      'We are a modern media platform focused on simplifying media buying through data-driven decisions, automation, and smarter collaboration between brands, agencies, and media owners.',
+
+    stats: [
+      {
+        value: '10K+',
+        label: 'Campaigns Managed',
+      },
+      {
+        value: '500+',
+        label: 'Trusted Partners',
+      },
+      {
+        value: '98%',
+        label: 'Performance Satisfaction',
+      },
+    ],
+  };
+}
+
+
+
+
+
+
+getBenefitsData() {
+  return {
+    title: 'Why Choose Media Alacarte?',
+    highlight: 'Media Alacarte',
+    subtitle:
+      'Unlock smarter media buying with measurable impact, automation, and full control over your campaigns.',
+
+    items: [
+      {
+        icon: '🚀',
+        title: 'Faster Results',
+        desc: 'Reduce campaign setup time and reach your audience instantly.',
+      },
+      {
+        icon: '💰',
+        title: 'Cost Efficiency',
+        desc: 'Optimize your budget and maximize ROI with smart automation.',
+      },
+      {
+        icon: '📈',
+        title: 'Better Performance',
+        desc: 'Make data-driven decisions that improve your campaign results.',
+      },
+      {
+        icon: '🔒',
+        title: 'Secure Platform',
+        desc: 'Enterprise-level security for all your media transactions.',
+      },
+    ],
+  };
+}
+
+
+
+
+
+
+
+getFeaturesData() {
+  return {
+    title: 'Powerful Features',
+    highlight: 'Features',
+    subtitle:
+      'Everything you need to plan, execute, and optimize your media campaigns in one platform.',
+
+    items: [
+      {
+        icon: '⚡',
+        title: 'Fast Campaign Setup',
+        desc: 'Launch campaigns in minutes with smart automation tools.',
+      },
+      {
+        icon: '📊',
+        title: 'Real-time Analytics',
+        desc: 'Track performance instantly with live insights and dashboards.',
+      },
+      {
+        icon: '🎯',
+        title: 'Precise Targeting',
+        desc: 'Reach the right audience using advanced segmentation.',
+      },
+      {
+        icon: '🤝',
+        title: 'Team Collaboration',
+        desc: 'Work together seamlessly across teams and agencies.',
+      },
+    ],
+  };
+}
+
+
+
+
+getPlatformData() {
+  return {
+    title: 'Welcome to Media Alacarte',
+    highlight: 'Media Alacarte',
+    subtitle:
+      'Build smarter media campaigns with data, automation, and performance insights.',
+    cta: 'Explore Platform',
+  };
+}
+
+
+getDemoData() {
+  return {
+    eyebrow: 'Request a Demo',
+    titleMain: 'Experience Smarter',
+    titleHighlight: 'Media Buying',
+    desc: 'Discover how Media Ala Carte helps advertisers, agencies, and media owners streamline campaigns, automate workflows, and maximize ROI.',
+    actions: {
+      primary: 'Book a Demo',
+      secondary: 'Explore Platform'
+    }
+  };
+}
+
+
+
+
 
   getServiceCards(): ServiceCard[] {
     return [
@@ -34,22 +202,37 @@ export class ContentService {
         id: 'advertisers',
         title: 'Advertisers',
         description: 'Run & optimize ads across multiple platforms effortlessly.',
-        imageUrl: 'fruit.jpg',
+        imageUrl: 'assets/images/people.jpg',
       },
       {
         id: 'agencies',
         title: 'Agencies',
         description: 'Streamline workflows and manage campaigns at scale.',
-        imageUrl: 'fruit.jpg',
+        imageUrl: 'assets/images/people.jpg',
       },
       {
         id: 'media-owners',
         title: 'Media Owners',
         description: 'Monetize your inventory with precision and ease.',
-        imageUrl: 'fruit.jpg',
+        imageUrl: 'assets/images/people.jpg',
       },
     ];
   }
+
+
+  getMarqueeItems1(): string[] {
+  return [
+    'We simplify media buying with smart automation',
+    'Seamless execution, and measurable impact.',
+  ];
+}
+
+getMarqueeItems2(): string[] {
+  return [
+    'Coming soon: Smarter media solutions for agencies and media owners!',
+    'Coming soon: Smarter media solutions for agencies and media owners!',
+  ];
+}
 
   getSolutionCards(): SolutionCard[] {
     return [
@@ -99,6 +282,18 @@ export class ContentService {
       avatarUrl: `https://i.pravatar.cc/80?img=${i + 10}`,
     }));
   }
+
+
+
+
+
+
+
+
+
+
+
+
 
   getFooterColumns(): FooterColumn[] {
     return [

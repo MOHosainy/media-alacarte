@@ -1,5 +1,6 @@
-<section class="solutions reveal">
+ <section class="solutions reveal">
   <div class="solutions__inner">
+
     <div class="solutions__header">
       <span class="solutions__eyebrow">Why Media Ala Carte?</span>
       <h2 class="solutions__title">
@@ -8,25 +9,38 @@
       </h2>
     </div>
 
-    <!-- Feature image card -->
+    <!-- Feature Card -->
     <div class="solutions__feature-card">
-      <img src="fruit.jpg" alt="Media buying simplified" />
+      <img src="assets/images/people.jpg" alt="Media buying simplified" />
       <div class="solutions__feature-text">
-        <p>We simplify media buying with data, automation, and collaboration to maximize ROI</p>
+        <p>
+          We simplify media buying with data, automation, and collaboration to maximize ROI
+        </p>
         <app-button variant="primary">Get Started</app-button>
       </div>
     </div>
 
-    <!-- Solution cards grid -->
+    <!-- Main Card (Campaign Planning) -->
+    @if (solutions[0]; as card) {
+      <div class="solutions__card solutions__card--main">
+        <span class="solutions__card-icon">{{ card.icon }}</span>
+        <h3 class="solutions__card-title">{{ card.title }}</h3>
+        <p class="solutions__card-desc">{{ card.description }}</p>
+        <button class="solutions__card-btn" aria-label="Learn more">↗</button>
+      </div>
+    }
+
+    <!-- Bottom Grid -->
     <div class="solutions__grid">
-      @for (card of solutions; track card.id) {
-        <div class="solutions__card" [class.solutions__card--highlight]="card.highlighted">
+      @for (card of solutions.slice(1); track card.id) {
+        <div class="solutions__card">
           <span class="solutions__card-icon">{{ card.icon }}</span>
           <h3 class="solutions__card-title">{{ card.title }}</h3>
           <p class="solutions__card-desc">{{ card.description }}</p>
-          <button class="solutions__card-btn" aria-label="Learn more about {{ card.title }}">↗</button>
+          <button class="solutions__card-btn" aria-label="Learn more">↗</button>
         </div>
       }
     </div>
+
   </div>
 </section>

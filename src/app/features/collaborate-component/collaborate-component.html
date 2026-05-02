@@ -19,13 +19,41 @@
 
     <!-- Team network visual -->
     <div class="collab__network">
+
+      <!-- ✅ SVG خطوط ونقاط -->
+      <svg class="collab__svg" viewBox="0 0 600 300" preserveAspectRatio="xMidYMid meet">
+  <!-- الدائرة -->
+  <ellipse cx="300" cy="300" rx="250" ry="220"
+           fill="none" stroke="rgba(255,255,255,0.07)" stroke-width="1"/>
+
+  <!-- خطوط بين الـ avatars -->
+  <line x1="300" y1="40"  x2="145" y2="80"  stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+  <line x1="300" y1="40"  x2="445" y2="80"  stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+  <line x1="145" y1="80"  x2="75"  y2="165" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+  <line x1="445" y1="80"  x2="510" y2="165" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+  <line x1="75"  y1="165" x2="175" y2="245" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+  <line x1="510" y1="165" x2="385" y2="245" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+  <line x1="300" y1="155" x2="300" y2="40"  stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+  <line x1="300" y1="155" x2="145" y2="80"  stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+  <line x1="300" y1="155" x2="445" y2="80"  stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+
+  <!-- نقاط -->
+  <circle cx="300" cy="155" r="3" fill="rgba(255,255,255,0.2)"/>
+  <circle cx="175" cy="245" r="2" fill="rgba(255,255,255,0.15)"/>
+  <circle cx="385" cy="245" r="2" fill="rgba(255,255,255,0.15)"/>
+</svg>
+
+   
+
       @for (member of members; track member.id; let i = $index) {
-        <div class="collab__avatar"
-             [style.--i]="i"
-             [style.--total]="members.length">
-          <img [src]="member.avatarUrl" [alt]="member.name" />
-        </div>
-      }
+  <div class="collab__avatar"
+       [ngClass]="'collab__avatar--' + i">
+    <img [src]="member.avatarUrl" [alt]="member.name" />
+  </div>
+}
+
+
+
     </div>
   </div>
 </section>

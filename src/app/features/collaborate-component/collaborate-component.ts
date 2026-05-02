@@ -46,4 +46,15 @@ export class CollaborateComponent implements OnInit, AfterViewInit {
     );
     this.statEls.forEach(el => observer.observe(el.nativeElement));
   }
+
+
+
+
+
+
+
+
+
+
+  
 }

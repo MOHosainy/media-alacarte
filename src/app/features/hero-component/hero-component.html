@@ -1,5 +1,4 @@
 <section class="hero" #heroSection>
-  <!-- Background glow blobs -->
   <div class="hero__blob hero__blob--1"></div>
   <div class="hero__blob hero__blob--2"></div>
 
@@ -8,17 +7,60 @@
     <div class="hero__accent-line">Bigger Impact</div>
     <h1 class="hero__title">Stronger Campaigns</h1>
     <p class="hero__subtitle">Smarter Media Buying</p>
-    <div class="hero__actions">
-      <app-button variant="primary">Start your journey!</app-button>
-    </div>
   </div>
 
-  <div class="hero__image-wrapper">
-    <img src="fruit.jpg"
-         alt="Team collaborating on media campaigns"
-         class="hero__image" />
-    <button class="hero__learn-more">
-      <span class="icon">⊙</span> Learn More
-    </button>
+  <div class="hero__image-container">
+
+    <div class="hero__image-wrapper">
+
+      <!-- Overlay layer بدل absolute العشوائي -->
+      <div class="hero__overlay">
+
+        <div class="hero__action-top">
+          <app-button variant="primary">Start your journey!</app-button>
+        </div>
+
+        <button class="hero__learn-more">
+          <span class="icon">⊙</span> Learn More
+        </button>
+
+      </div>
+
+      <svg width="0" height="0" style="position:absolute; pointer-events:none;">
+        <defs>
+          <clipPath id="heroClip" clipPathUnits="objectBoundingBox">
+            <path d="
+              M 0.147,0.18
+              L 0.03,0.18
+              A 0.03,0.03 0 0 1 0,0.21
+              L 0,0.18
+              L 0.24,0.18
+              C 0.25,0.18 0.26,0.18 0.27,0.175
+              C 0.28,0.17 0.29,0.165 0.30,0.14
+              L 0.30,0.04
+              C 0.30,0.02 0.32,0 0.34,0
+              L 0.985,0
+              A 0.012,0.012 0 0 1 1,0.012
+              L 1,0.04
+              L 1,1
+              C 0.98,1 0.98,1 0.98,0.98
+              C 0.98,0.94 0.97,0.90 0.95,0.89
+              C 0.93,0.88 0.90,0.88 0.94,0.88
+              L 0.76,0.88
+              C 0.80,0.88 0.77,0.88 0.75,0.89
+              C 0.73,0.90 0.72,0.94 0.72,0.98
+              C 0.72,1 0.72,1 0.70,1
+              L 0.147,1
+              C 0.11,1 0,0.975 0,0.91
+              L 0,0.18
+              Z"/>
+          </clipPath>
+        </defs>
+      </svg>
+
+      <img src="assets/images/people.jpg" class="hero__image" />
+
+
+    </div>
   </div>
 </section>

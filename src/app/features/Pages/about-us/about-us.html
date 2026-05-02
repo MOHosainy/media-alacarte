@@ -1,0 +1,27 @@
+<section class="about">
+
+  <div class="about__container">
+
+    <h1 class="about__title">
+      {{ about.title.split(' ')[0] }}
+      <span>{{ about.highlight }}</span>
+    </h1>
+
+    <p class="about__text">
+      {{ about.text }}
+    </p>
+
+    <div class="about__stats">
+
+      @for (stat of about.stats; track stat.value) {
+        <div class="about__stat">
+          <h2>{{ stat.value }}</h2>
+          <p>{{ stat.label }}</p>
+        </div>
+      }
+
+    </div>
+
+  </div>
+
+</section>

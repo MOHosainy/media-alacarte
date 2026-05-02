@@ -1,37 +1,539 @@
+// @use '../../../styles/variables' as v;
+
+// .marquee-section {
+//   position: relative;
+//   width: 100%;
+//   height: 170px;
+//   overflow: hidden;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+// }
+
+// .marquee {
+//   position: absolute;
+
+//   /* مهم عشان يطلع برا الشاشة زي الصورة */
+//   width: 120%;
+//   left: -10%;
+
+//   background: v.$color-accent-gradient;
+//   box-shadow: 0 4px 24px rgba(232, 40, 74, 0.28);
+
+//   display: flex;
+//   align-items: center;
+
+//   &--right {
+//     height: 48px;
+
+//     top: 48px;
+
+//     transform: rotate(-4deg);
+
+//     z-index: 2;
+//   }
+
+//   &--left {
+//     height: 62px;
+
+//     top: 62px;
+
+//     transform: rotate(4deg);
+
+//     z-index: 1;
+//   }
+
+//   &__track {
+//     display: flex;
+//     width: max-content;
+//     animation: marqueeScroll 22s linear infinite;
+//     will-change: transform;
+//   }
+
+//   &__track--reverse {
+//     animation: marqueeScrollReverse 22s linear infinite;
+//   }
+
+//   &__item {
+//     display: inline-flex;
+//     align-items: center;
+//     gap: 14px;
+
+//     white-space: nowrap;
+
+//     font-size: clamp(0.95rem, 1.4vw, 1.2rem);
+//     font-weight: 600;
+
+//     color: #111;
+
+//     padding: 0 34px;
+
+//     letter-spacing: -0.2px;
+//   }
+
+//   &__dot {
+//     width: 7px;
+//     height: 7px;
+//     border-radius: 50%;
+//     background: #111;
+//     opacity: 0.7;
+//     flex-shrink: 0;
+//   }
+// }
+
+// @keyframes marqueeScroll {
+//   from {
+//     transform: translateX(0);
+//   }
+
+//   to {
+//     transform: translateX(-50%);
+//   }
+// }
+
+// @keyframes marqueeScrollReverse {
+//   from {
+//     transform: translateX(-50%);
+//   }
+
+//   to {
+//     transform: translateX(0);
+//   }
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// @use '../../../styles/variables' as v;
+
+// .marquee-section {
+//   position: relative;
+//   width: 100%;
+//   height: clamp(110px, 16vw, 170px);
+
+//   overflow: hidden;
+
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+// }
+
+// .marquee {
+//   position: absolute;
+
+// //   width: 160%;
+// // left: -30%;
+
+
+//    box-sizing: border-box;
+
+
+
+
+//   background: v.$color-accent-gradient;
+
+//   box-shadow: 0 4px 24px rgba(232, 40, 74, 0.28);
+
+//   display: flex;
+//   align-items: center;
+
+//   white-space: nowrap;
+
+//   transform-origin: center center;
+
+// &--right {
+//   height: clamp(38px, 5vw, 52px);
+
+//   top: 42px;
+
+//   transform: rotate(-4deg);
+
+//   z-index: 2;
+// }
+
+// &--left {
+//   height: clamp(38px, 5vw, 52px);
+
+//   top: 42px;
+
+//   transform: rotate(4deg);
+
+//   z-index: 1;
+// }
+
+
+
+
+
+
+
+
+
+
+//   &__track {
+//     display: flex;
+
+//     width: max-content;
+
+//     animation: marqueeScroll 22s linear infinite;
+
+//     will-change: transform;
+//   }
+
+//   &__track--reverse {
+//     animation: marqueeScrollReverse 22s linear infinite;
+//   }
+
+//   &__item {
+//     display: inline-flex;
+//     align-items: center;
+
+//     gap: clamp(8px, 1vw, 14px);
+
+//     white-space: nowrap;
+
+//     font-size: clamp(0.72rem, 1.3vw, 1.15rem);
+
+//     font-weight: 600;
+
+//     color: #111;
+
+//     padding-inline: clamp(14px, 2vw, 34px);
+
+//     letter-spacing: -0.2px;
+
+//     flex-shrink: 0;
+//   }
+
+//   &__dot {
+//     width: clamp(4px, 0.5vw, 7px);
+//     height: clamp(4px, 0.5vw, 7px);
+
+//     border-radius: 50%;
+
+//     background: #111;
+
+//     opacity: 0.7;
+
+//     flex-shrink: 0;
+//   }
+// }
+
+// /* Large screens */
+// @media (min-width: 1400px) {
+//   .marquee {
+//     width: 180%;
+//     left: -40%;
+//   }
+// }
+
+// /* Tablet */
+// @media (max-width: 768px) {
+//   .marquee {
+//     width: 145%;
+//     left: -22%;
+
+//     &--right {
+//       transform: rotate(-5deg);
+//     }
+
+//     &--left {
+//       transform: rotate(5deg);
+//     }
+
+//     &__track {
+//       animation-duration: 18s;
+//     }
+//   }
+// }
+
+// /* Mobile */
+// @media (max-width: 480px) {
+//   .marquee {
+//     width: 170%;
+//     left: -35%;
+
+//     &--right {
+//       transform: rotate(-6deg);
+//     }
+
+//     &--left {
+//       transform: rotate(6deg);
+//     }
+//   }
+// }
+
+
+
+// /* Tablet */
+// @media (max-width: 768px) {
+//   .marquee {
+//     width: 145%;
+//     left: -22%;
+
+//     &--right {
+//       transform: translateX(7%) rotate(-5deg);
+//     }
+
+//     &--left {
+//       transform: translateX(-7%) rotate(5deg);
+//     }
+
+//     &__track {
+//       animation-duration: 18s;
+//     }
+//   }
+// }
+
+// /* Mobile */
+// @media (max-width: 480px) {
+//   .marquee-section {
+//     height: 110px;
+//   }
+
+//   .marquee {
+//     width: 170%;
+//     left: -35%;
+
+//     &--right {
+//       height: 34px;
+
+//       top: 30px;
+
+//       transform: translateX(8%) rotate(-6deg);
+//     }
+
+//     &--left {
+//       height: 42px;
+
+//       top: 42px;
+
+//       transform: translateX(-8%) rotate(6deg);
+//     }
+
+//     &__item {
+//       font-size: 0.72rem;
+
+//       padding-inline: 14px;
+
+//       gap: 8px;
+//     }
+
+//     &__track {
+//       animation-duration: 14s;
+//     }
+//   }
+// }
+
+// @keyframes marqueeScroll {
+//   from {
+//     transform: translateX(0);
+//   }
+
+//   to {
+//     transform: translateX(-50%);
+//   }
+// }
+
+// @keyframes marqueeScrollReverse {
+//   from {
+//     transform: translateX(-50%);
+//   }
+
+//   to {
+//     transform: translateX(0);
+//   }
+// }
+
+
+
+
+
+
+
+
+
+
+
+
 @use '../../../styles/variables' as v;
 
-.marquee {
-  background: v.$color-accent-gradient;
+.marquee-section {
+  position: relative;
+  width: 100%;
+  height: clamp(110px, 16vw, 170px);
+
   overflow: hidden;
-  padding: v.$space-md 0;
 
-  &__track {
-    display: flex;
-    width: max-content;
-    animation: marquee 30s linear infinite;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* =======================
+   MARQUEE BASE
+======================= */
+.marquee {
+  position: absolute;
+
+  width: 100%;
+  left: 0;
+
+  overflow: visible;
+
+  background: v.$color-accent-gradient;
+  box-shadow: 0 4px 24px rgba(232, 40, 74, 0.28);
+
+  display: flex;
+  align-items: center;
+
+  white-space: nowrap;
+
+  transform-origin: center;
+}
+
+/* =======================
+   TOP LAYERS
+======================= */
+.marquee--right {
+  height: clamp(38px, 5vw, 52px);
+  top: 42px;
+  transform: rotate(-4deg);
+  z-index: 2;
+}
+
+.marquee--left {
+  height: clamp(38px, 5vw, 52px);
+  top: 42px;
+  transform: rotate(4deg);
+  z-index: 1;
+}
+
+/* =======================
+   TRACK
+======================= */
+.marquee__track {
+  display: flex;
+  width: max-content;
+
+  animation: marqueeScroll 22s linear infinite;
+  will-change: transform;
+}
+
+.marquee__track--reverse {
+  animation: marqueeScrollReverse 22s linear infinite;
+}
+
+/* =======================
+   ITEM
+======================= */
+.marquee__item {
+  display: inline-flex;
+  align-items: center;
+
+  gap: clamp(8px, 1vw, 14px);
+
+  white-space: nowrap;
+
+  font-size: clamp(0.72rem, 1.3vw, 1.15rem);
+  font-weight: 600;
+
+  color: #111;
+
+  padding-inline: clamp(14px, 2vw, 34px);
+
+  letter-spacing: -0.2px;
+
+  flex-shrink: 0;
+}
+
+.marquee__dot {
+  width: clamp(4px, 0.5vw, 7px);
+  height: clamp(4px, 0.5vw, 7px);
+
+  border-radius: 50%;
+  background: #111;
+
+  opacity: 0.7;
+
+  flex-shrink: 0;
+}
+
+/* =======================
+   ANIMATION
+======================= */
+@keyframes marqueeScroll {
+  from {
+    transform: translate3d(0, 0, 0);
   }
-
-  &__item {
-    display: flex;
-    align-items: center;
-    gap: v.$space-md;
-    white-space: nowrap;
-    padding: 0 v.$space-xl;
-    font-size: 0.9rem;
-    font-weight: 500;
-    color: rgba(255,255,255,0.95);
-  }
-
-  &__dot {
-    width: 6px;
-    height: 6px;
-    background: rgba(255,255,255,0.6);
-    border-radius: 50%;
-    flex-shrink: 0;
+  to {
+    transform: translate3d(-50%, 0, 0);
   }
 }
 
-@keyframes marquee {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-50%); }
+@keyframes marqueeScrollReverse {
+  from {
+    transform: translate3d(-50%, 0, 0);
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+/* =======================
+   RESPONSIVE
+======================= */
+
+/* Tablet */
+@media (max-width: 768px) {
+  .marquee--right {
+    transform: rotate(-5deg);
+  }
+
+  .marquee--left {
+    transform: rotate(5deg);
+  }
+
+  .marquee__track {
+    animation-duration: 18s;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .marquee-section {
+    height: 110px;
+  }
+
+  .marquee--right {
+    height: 34px;
+    top: 30px;
+    transform: rotate(-6deg);
+  }
+
+  .marquee--left {
+    height: 42px;
+    top: 42px;
+    transform: rotate(6deg);
+  }
+
+  .marquee__item {
+    font-size: 0.72rem;
+    padding-inline: 14px;
+    gap: 8px;
+  }
+
+  .marquee__track {
+    animation-duration: 14s;
+  }
 }

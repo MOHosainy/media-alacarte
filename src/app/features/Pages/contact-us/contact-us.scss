@@ -1,0 +1,206 @@
+@use '../../../../styles/variables' as v;
+@use '../../../../styles/mixins' as m;
+
+.contact {
+  min-height: 100vh;
+
+  padding: 120px 24px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+
+  background:
+    radial-gradient(circle at top left,
+      rgba(232, 40, 74, 0.15),
+      transparent 30%),
+    radial-gradient(circle at bottom right,
+      rgba(255,255,255,0.05),
+      transparent 30%),
+    v.$color-bg-secondary;
+
+  overflow: hidden;
+
+  animation: fadePage 1s ease;
+}
+
+.contact h1 {
+  font-size: clamp(2.5rem, 6vw, 5rem);
+
+  font-family: v.$font-display;
+
+  line-height: 1.1;
+
+  margin-bottom: 20px;
+
+  color: white;
+
+  animation: slideUp 0.8s ease;
+}
+
+.contact p {
+  max-width: 700px;
+
+  font-size: 1.05rem;
+
+  line-height: 1.8;
+
+  color: rgba(255,255,255,0.75);
+
+  animation: slideUp 1s ease;
+}
+
+.contact__info {
+  margin-top: 50px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+
+  padding: 30px;
+
+  border-radius: 24px;
+
+  background: rgba(255,255,255,0.03);
+
+  border: 1px solid rgba(255,255,255,0.08);
+
+  backdrop-filter: blur(12px);
+
+  -webkit-backdrop-filter: blur(12px);
+
+  animation: scaleIn 1.1s ease;
+}
+
+.contact__info p {
+  margin: 0;
+
+  font-size: 1rem;
+
+  color: rgba(255,255,255,0.85);
+}
+
+.contact__socials {
+  margin-top: 40px;
+
+  display: flex;
+  gap: 18px;
+
+  flex-wrap: wrap;
+
+  justify-content: center;
+
+  animation: fadeIn 1.4s ease;
+}
+
+.contact__socials a {
+  padding: 14px 24px;
+
+  border-radius: 999px;
+
+  text-decoration: none;
+
+  color: white;
+
+  background: rgba(255,255,255,0.05);
+
+  border: 1px solid rgba(255,255,255,0.08);
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.contact__socials a:hover {
+  transform: translateY(-5px);
+
+  background: rgba(232, 40, 74, 0.15);
+
+  border-color: rgba(232, 40, 74, 0.4);
+}
+
+/* ================= ANIMATIONS ================= */
+
+@keyframes fadePage {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(45px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* ================= RESPONSIVE ================= */
+
+@include m.tablet {
+  .contact {
+    padding: 100px 20px;
+  }
+
+  .contact h1 {
+    font-size: 3rem;
+  }
+
+  .contact__info {
+    width: 100%;
+    max-width: 500px;
+  }
+}
+
+@include m.mobile {
+  .contact h1 {
+    font-size: 2.3rem;
+  }
+
+  .contact p {
+    font-size: 0.95rem;
+  }
+
+  .contact__socials {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .contact__socials a {
+    width: 100%;
+  }
+}
