@@ -1,0 +1,109 @@
+@use '../../../styles/variables' as v;
+@use '../../../styles/mixins' as m;
+
+.cta {
+  padding: v.$space-xl v.$space-xl;
+
+  &__inner {
+    max-width: 900px;
+    margin: 0 auto;
+    background: v.$color-bg-card;
+    border: 1px solid v.$color-border;
+    border-radius: v.$radius-xl;
+    padding: v.$space-2xl v.$space-xl;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+
+    // blob decoration
+    &::before {
+      content: '';
+      position: absolute;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(232, 40, 74, 0.08), transparent 70%);
+      bottom: -150px;
+      left: -100px;
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, rgba(232, 40, 74, 0.06), transparent 70%);
+      top: -100px;
+      right: -80px;
+      border-radius: 50%;
+      pointer-events: none;
+    }
+  }
+
+  &__title {
+    font-size: clamp(1.5rem, 3.5vw, 2.4rem);
+    font-weight: 700;
+    color: v.$color-text-primary;
+    line-height: 1.3;
+    margin-bottom: v.$space-lg;
+  }
+
+  &__features {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: v.$space-xl;
+    margin-bottom: v.$space-xl;
+    flex-wrap: wrap;
+
+    @include m.mobile {
+      flex-direction: column;
+      gap: v.$space-md;
+    }
+  }
+
+  &__feature {
+    display: flex;
+    align-items: center;
+    gap: v.$space-sm;
+    font-size: 0.95rem;
+    color: v.$color-text-primary;
+  }
+
+  &__check {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: v.$color-accent-gradient;
+    color: #fff;
+    font-size: 0.65rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  &__btn {
+    background: v.$color-accent-gradient;
+    color: #fff;
+    border: none;
+    padding: 14px 36px;
+    border-radius: v.$radius-full;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity v.$transition-fast, transform v.$transition-fast;
+    font-family: v.$font-body;
+
+    span {
+      margin-left: 6px;
+      font-size: 1.1rem;
+    }
+
+    &:hover {
+      opacity: 0.88;
+      transform: translateY(-2px);
+    }
+  }
+}

@@ -1,80 +1,3 @@
-// @use '../../../styles/variables' as v;
-// @use '../../../styles/mixins' as m;
-
-// .navbar {
-//   position: fixed;
-//   top: 0;
-//   left: 0;
-//   right: 0;
-//   z-index: v.$z-navbar;
-//   padding: v.$space-lg v.$space-xl;
-//   transition: background v.$transition-normal, padding v.$transition-normal;
-
-//   &--scrolled {
-//     background: rgba(10, 10, 10, 0.85);
-//     backdrop-filter: blur(20px);
-//     padding: v.$space-md v.$space-xl;
-//     border-bottom: 1px solid v.$color-border;
-//   }
-
-//   &__inner {
-//     @include m.flex-between;
-//     max-width: 1280px;
-//     margin: 0 auto;
-//   }
-
-//   &__logo img { height: 36px; }
-
-//   &__links {
-//     display: flex;
-//     list-style: none;
-//     gap: v.$space-xl;
-//     @include m.tablet { display: none; }
-//   }
-
-//   &__link {
-//     font-size: 0.9rem;
-//     color: v.$color-text-secondary;
-//     transition: color v.$transition-fast;
-//     &:hover, &.active { color: v.$color-text-primary; }
-//     &.active { color: v.$color-accent; }
-//   }
-
-//   &__hamburger {
-//     display: none;
-//     flex-direction: column;
-//     gap: 5px;
-//     background: none;
-//     border: none;
-//     cursor: pointer;
-//     @include m.tablet { display: flex; }
-
-//     span {
-//       width: 24px;
-//       height: 2px;
-//       background: v.$color-text-primary;
-//       border-radius: 2px;
-//     }
-//   }
-
-//   &__mobile {
-//     display: none;
-//     flex-direction: column;
-//     gap: v.$space-md;
-//     padding: v.$space-lg;
-//     background: v.$color-bg-secondary;
-
-//     &.open { display: flex; }
-
-//     a {
-//       color: v.$color-text-secondary;
-//       font-size: 1rem;
-//       &:hover { color: v.$color-accent; }
-//     }
-//   }
-// }
-
-
 
 
 @use '../../../styles/variables' as v;
@@ -111,6 +34,48 @@
     gap: 20px;
     position: relative;
   }
+
+
+  &__link {
+  position: relative;
+
+  font-size: 0.9rem;
+  white-space: nowrap;
+
+  color: v.$color-text-secondary;
+
+  transition: color v.$transition-fast;
+
+  &::after {
+    content: '';
+
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+
+    width: 0;
+    height: 2px;
+
+    background: v.$color-accent;
+    border-radius: 999px;
+
+    transition: width 0.3s ease;
+  }
+
+  &:hover {
+    color: v.$color-text-primary;
+  }
+
+  &.active {
+    color: v.$color-accent;
+
+    &::after {
+      width: 50%;
+    }
+  }
+}
+
+
 
   /* LOGO */
   &__logo img {

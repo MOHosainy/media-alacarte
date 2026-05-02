@@ -1,4 +1,5 @@
 
+
 @use '../../../styles/variables' as v;
 @use '../../../styles/mixins' as m;
 
@@ -38,6 +39,30 @@
     text-align: center;
     max-width: 700px;
     z-index: 2;
+
+    .hero__accent-line {
+      font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+      font-weight: 500;
+      color: #c0243e;
+      letter-spacing: 0.02em;
+      margin-bottom: 8px;
+    }
+
+    .hero__title {
+      font-size: clamp(3rem, 8vw, 6rem);
+      font-weight: 800;
+      color: #ffffff;
+      letter-spacing: -0.02em;
+      line-height: 1.05;
+      margin-bottom: 16px;
+    }
+
+    .hero__subtitle {
+      font-size: clamp(1.2rem, 3vw, 2rem);
+      font-weight: 300;
+      color: #7a7a8a;
+      letter-spacing: 0.01em;
+    }
   }
 
   /* ================= IMAGE ================= */
@@ -98,13 +123,13 @@
 
   &__learn-more {
     align-self: flex-end;
-    transform: translate(-12px, 35px) ;
+    transform: translate(-12px, 35px);
     background: rgba(0, 0, 0, 0.75);
     backdrop-filter: blur(14px);
     border: 1px solid rgba(255, 255, 255, 0.25);
     color: #fff;
     padding: clamp(6px, 1vw, 12px) clamp(10px, 1.8vw, 18px);
-    font-size: clamp(0.7rem, 1.1vw, 0.95rem);
+    font-size: clamp(0.8rem, 1.2vw, 1rem);
     border-radius: 999px;
     display: inline-flex;
     align-items: center;
@@ -112,13 +137,12 @@
     cursor: pointer;
     transition: 0.3s;
     margin-top: auto;
-    font-size: clamp(0.8rem, 1.2vw, 1rem);
-    -webkit-transform: translate(-12px, 35px) ;
-    -moz-transform: translate(-12px, 35px) ;
-    -ms-transform: translate(-12px, 35px) ;
-    -o-transform: translate(-12px, 35px) ;
-    &:hover 
-{
+    -webkit-transform: translate(-12px, 35px);
+    -moz-transform: translate(-12px, 35px);
+    -ms-transform: translate(-12px, 35px);
+    -o-transform: translate(-12px, 35px);
+
+    &:hover {
       transform: translate(-12px, 20px) translateY(-2px);
       background: rgba(232, 40, 74, 0.5);
     }
@@ -147,11 +171,10 @@
       -moz-transform: translate(-18px, -37px);
       -ms-transform: translate(-18px, -37px);
       -o-transform: translate(-18px, -37px);
-}
+    }
   }
 
- 
- @media (max-width: 480px) {
+  @media (max-width: 480px) {
     &__image-container {
       overflow: visible !important;
     }
@@ -165,15 +188,17 @@
       inset: 0;
       display: block;
       pointer-events: none;
-      padding: 0;
+      padding: 10px;
       overflow: visible;
+
+      
     }
 
     &__action-top {
       pointer-events: auto;
       position: absolute;
-      top: -18px;
-      left: -5px;
+      top: -10px;
+      left: 10px;
       transform: none;
 
       ::ng-deep .btn {
@@ -187,19 +212,19 @@
     &__learn-more {
       pointer-events: auto;
       position: absolute;
-      bottom: 6px;
-     right: 3px;
+      bottom: 16px;
+      right: 4px;
       font-size: 8px;
-      padding: 4px 5px;
+      padding: 6px 12px;
       margin-top: 0;
-      &:hover
-{
+
+      &:hover {
         transform: translateY(-2px);
         -webkit-transform: translateY(-2px);
         -moz-transform: translateY(-2px);
         -ms-transform: translateY(-2px);
         -o-transform: translateY(-2px);
-}
+      }
     }
   }
 
@@ -221,6 +246,4 @@
       padding: 3px 7px;
     }
   }
-
-
 }

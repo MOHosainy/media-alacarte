@@ -9,19 +9,24 @@
 >
   <img src="assets/images/Media.jpg" alt="Media Alacarte" />
 </a>
-    <ul class="navbar__links">
-      @for (item of navItems; track item.route) {
-        <li>
-          <a [routerLink]="item.route"
-             routerLinkActive="active"
-             class="navbar__link">
-            {{ item.label }}
-          </a>
-        </li>
-      }
-    </ul>
-
    
+
+
+    <ul class="navbar__links">
+  @for (item of navItems; track item.route) {
+    <li>
+      <a
+  [routerLink]="item.route"
+  routerLinkActive="active"
+  [routerLinkActiveOptions]="{ exact: item.route === '/' }"
+  class="navbar__link"
+>
+  {{ item.label }}
+</a>
+  }
+</ul>
+
+
     <app-button variant="primary" routerLink="/login">
   Login
 </app-button>

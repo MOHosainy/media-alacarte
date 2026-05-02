@@ -12,7 +12,9 @@
     margin: 0 auto;
 
     display: grid;
-    grid-template-columns: 1.8fr 1fr;
+    grid-template-columns: 2fr 1fr;
+      grid-template-rows: auto auto auto;
+
     grid-template-areas:
       "header header"
       "feature main"

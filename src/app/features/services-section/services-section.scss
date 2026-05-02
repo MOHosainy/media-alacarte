@@ -66,6 +66,17 @@
     }
 
     &-title {
+       display: inline-block;
+
+  width: fit-content;
+
+  padding: 10px 8px;
+
+  background: v.$color-accent-gradient;
+  backdrop-filter: blur(10px);
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
       font-size: 1.1rem;
       font-family: v.$font-display;
       writing-mode: vertical-rl;
@@ -90,12 +101,26 @@
       position: absolute;
       bottom: v.$space-lg;
       right: v.$space-lg;
-      width: 40px; height: 40px;
+      width: 40px;
+       height: 40px;
       border-radius: 50%;
       background: v.$color-accent;
       border: none;
       color: #fff;
-      font-size: 1.1rem;
+
+        line-height: 1;
+
+      font-size: 2rem;
+
+      display: flex;
+  align-items: center;
+  justify-content: center;
+
+  
+  transition: opacity v.$transition-normal;
+
+
+
       cursor: pointer;
       @include m.flex-center;
       opacity: 0;
