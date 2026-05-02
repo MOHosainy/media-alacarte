@@ -1,0 +1,32 @@
+<section class="solutions reveal">
+  <div class="solutions__inner">
+    <div class="solutions__header">
+      <span class="solutions__eyebrow">Why Media Ala Carte?</span>
+      <h2 class="solutions__title">
+        Our All <mark>Solution</mark> for<br />
+        Smarter Media Buying
+      </h2>
+    </div>
+
+    <!-- Feature image card -->
+    <div class="solutions__feature-card">
+      <img src="fruit.jpg" alt="Media buying simplified" />
+      <div class="solutions__feature-text">
+        <p>We simplify media buying with data, automation, and collaboration to maximize ROI</p>
+        <app-button variant="primary">Get Started</app-button>
+      </div>
+    </div>
+
+    <!-- Solution cards grid -->
+    <div class="solutions__grid">
+      @for (card of solutions; track card.id) {
+        <div class="solutions__card" [class.solutions__card--highlight]="card.highlighted">
+          <span class="solutions__card-icon">{{ card.icon }}</span>
+          <h3 class="solutions__card-title">{{ card.title }}</h3>
+          <p class="solutions__card-desc">{{ card.description }}</p>
+          <button class="solutions__card-btn" aria-label="Learn more about {{ card.title }}">↗</button>
+        </div>
+      }
+    </div>
+  </div>
+</section>

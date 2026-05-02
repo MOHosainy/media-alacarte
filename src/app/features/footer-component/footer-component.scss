@@ -1,0 +1,92 @@
+@use '../../../styles/variables' as v;
+@use '../../../styles/mixins' as m;
+
+.footer {
+  background: v.$color-bg-secondary;
+  border-top: 1px solid v.$color-border;
+
+  &__inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: v.$space-2xl v.$space-xl;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 2fr;
+    gap: v.$space-2xl;
+
+    @include m.tablet {
+      grid-template-columns: 1fr 1fr;
+      gap: v.$space-xl;
+    }
+    @include m.mobile {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__logo { height: 40px; margin-bottom: v.$space-md; }
+
+  &__tagline {
+    font-size: 0.85rem;
+    color: v.$color-text-secondary;
+    margin-bottom: v.$space-md;
+  }
+
+  &__socials {
+    display: flex;
+    gap: v.$space-md;
+
+    a {
+      width: 36px; height: 36px;
+      border: 1px solid v.$color-border;
+      border-radius: 50%;
+      @include m.flex-center;
+      font-size: 0.85rem;
+      color: v.$color-text-secondary;
+      transition: all v.$transition-fast;
+      &:hover { border-color: v.$color-accent; color: v.$color-accent; }
+    }
+  }
+
+  &__col-title {
+    font-size: 0.95rem;
+    font-family: v.$font-display;
+    margin-bottom: v.$space-lg;
+    color: v.$color-text-primary;
+  }
+
+  &__links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: v.$space-md;
+
+    a {
+      font-size: 0.875rem;
+      color: v.$color-text-secondary;
+      transition: color v.$transition-fast;
+      &:hover { color: v.$color-accent; }
+    }
+  }
+
+  &__contact {
+    address {
+      font-style: normal;
+      display: flex;
+      flex-direction: column;
+      gap: v.$space-md;
+      font-size: 0.875rem;
+      color: v.$color-text-secondary;
+      line-height: 1.6;
+    }
+    a { color: v.$color-accent; }
+  }
+
+  &__bottom {
+    border-top: 1px solid v.$color-border;
+    padding: v.$space-lg v.$space-xl;
+    text-align: center;
+    font-size: 0.8rem;
+    color: v.$color-text-secondary;
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+}

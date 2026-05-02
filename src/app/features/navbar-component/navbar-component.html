@@ -1,0 +1,37 @@
+<nav class="navbar" [class.navbar--scrolled]="isScrolled">
+  <div class="navbar__inner">
+
+    <!-- Logo -->
+    <a class="navbar__logo" routerLink="/">
+      <img src="assets/images/logo.svg" alt="Media Alacarte" />
+    </a>
+
+    <!-- Desktop nav links -->
+    <ul class="navbar__links">
+      @for (item of navItems; track item.route) {
+        <li>
+          <a [routerLink]="item.route"
+             routerLinkActive="active"
+             class="navbar__link">
+            {{ item.label }}
+          </a>
+        </li>
+      }
+    </ul>
+
+    <!-- CTA -->
+    <app-button variant="primary">Login</app-button>
+
+    <!-- Hamburger (mobile) -->
+    <button class="navbar__hamburger" (click)="toggleMenu()" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+  <!-- Mobile menu -->
+  <div class="navbar__mobile" [class.open]="menuOpen">
+    @for (item of navItems; track item.route) {
+      <a [routerLink]="item.route" (click)="menuOpen = false">{{ item.label }}</a>
+    }
+  </div>
+</nav>

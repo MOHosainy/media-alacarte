@@ -1,0 +1,132 @@
+@use '../../../styles/variables' as v;
+@use '../../../styles/mixins' as m;
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  @include m.flex-center;
+  flex-direction: column;
+  padding: calc(v.$space-3xl + 80px) v.$space-xl v.$space-3xl;
+  overflow: hidden;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+
+  &--visible { opacity: 1; }
+  &--visible .hero__content > * {
+    animation: slideUp 0.7s ease forwards;
+  }
+
+  // Background blobs
+  &__blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(120px);
+    pointer-events: none;
+
+    &--1 {
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(232, 40, 74, 0.18), transparent 70%);
+      top: -100px; right: -100px;
+    }
+    &--2 {
+      width: 400px; height: 400px;
+      background: radial-gradient(circle, rgba(232, 40, 74, 0.08), transparent 70%);
+      bottom: 0; left: -100px;
+    }
+  }
+
+  &__content {
+    text-align: center;
+    position: relative;
+    z-index: v.$z-above;
+    max-width: 700px;
+
+    & > * {
+      opacity: 0;
+      @for $i from 1 through 5 {
+        &:nth-child(#{$i}) { animation-delay: #{$i * 0.12}s; }
+      }
+    }
+  }
+
+  &__eyebrow {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: v.$color-text-secondary;
+    display: block;
+    margin-bottom: v.$space-md;
+  }
+
+  &__accent-line {
+    font-family: v.$font-display;
+    font-size: 1.2rem;
+    font-weight: 600;
+    @include m.gradient-text;
+    margin-bottom: v.$space-sm;
+  }
+
+  &__title {
+    font-size: clamp(2.8rem, 7vw, 5.5rem);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: v.$color-text-primary;
+    margin-bottom: v.$space-sm;
+  }
+
+  &__subtitle {
+    font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+    color: v.$color-text-secondary;
+    margin-bottom: v.$space-xl;
+  }
+
+  &__actions { @include m.flex-center; }
+
+  &__image-wrapper {
+    position: relative;
+    margin-top: v.$space-2xl;
+    border-radius: v.$radius-xl;
+    overflow: hidden;
+    max-width: 680px;
+    width: 100%;
+    border: 1px solid v.$color-border;
+
+    &::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 60%, rgba(10,10,10,0.4) 100%);
+    }
+  }
+
+  &__image {
+    width: 100%;
+    height: 380px;
+    object-fit: cover;
+  }
+
+  &__learn-more {
+    position: absolute;
+    bottom: v.$space-lg;
+    right: v.$space-lg;
+    z-index: v.$z-above;
+    background: rgba(0,0,0,0.6);
+    backdrop-filter: blur(12px);
+    border: 1px solid v.$color-border;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: v.$radius-full;
+    font-family: v.$font-body;
+    font-size: 0.85rem;
+    cursor: pointer;
+    @include m.flex-center;
+    gap: v.$space-sm;
+    transition: background v.$transition-fast;
+    &:hover { background: rgba(232, 40, 74, 0.3); }
+  }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}

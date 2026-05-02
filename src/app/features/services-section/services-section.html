@@ -1,0 +1,29 @@
+<section class="services reveal">
+  <div class="services__header">
+    <div class="services__icon">✦</div>
+    <h2 class="services__title">Our Services</h2>
+  </div>
+
+  <div class="services__cards">
+    @for (service of services; track service.id; let i = $index) {
+      <div
+        class="services__card"
+        [class.services__card--active]="activeIndex === i"
+        (mouseenter)="setActive(i)">
+
+        <img [src]="service.imageUrl"
+             [alt]="service.title"
+             class="services__card-img" />
+
+        <div class="services__card-overlay">
+          <h3 class="services__card-title">{{ service.title }}</h3>
+          @if (activeIndex === i) {
+            <p class="services__card-desc">{{ service.description }}</p>
+          }
+        </div>
+
+        <button class="services__card-arrow" aria-label="View {{ service.title }}">↗</button>
+      </div>
+    }
+  </div>
+</section>

@@ -1,0 +1,141 @@
+@use '../../../styles/variables' as v;
+@use '../../../styles/mixins' as m;
+
+.solutions {
+  @include m.section-padding;
+  background: v.$color-bg-secondary;
+
+  &__inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-areas:
+      "header  header"
+      "feature grid";
+    grid-template-columns: 1fr 1fr;
+    gap: v.$space-lg;
+
+    @include m.tablet {
+      grid-template-areas: "header" "feature" "grid";
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__header {
+    grid-area: header;
+    margin-bottom: v.$space-lg;
+  }
+
+  &__eyebrow {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: v.$color-text-secondary;
+    display: block;
+    margin-bottom: v.$space-sm;
+  }
+
+  &__title {
+    font-size: clamp(2rem, 4vw, 3rem);
+    mark {
+      background: v.$color-accent;
+      color: #fff;
+      padding: 0 8px;
+      border-radius: 4px;
+    }
+  }
+
+  &__feature-card {
+    grid-area: feature;
+    border-radius: v.$radius-xl;
+    overflow: hidden;
+    position: relative;
+    min-height: 280px;
+    border: 1px solid v.$color-border;
+
+    img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 40%, rgba(0,0,0,0.85) 100%);
+    }
+  }
+
+  &__feature-text {
+    position: absolute;
+    bottom: v.$space-lg;
+    left: v.$space-lg;
+    right: v.$space-lg;
+    z-index: v.$z-above;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: v.$space-md;
+
+    p {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.85);
+      max-width: 260px;
+    }
+  }
+
+  &__grid {
+    grid-area: grid;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: v.$space-md;
+  }
+
+  &__card {
+    @include m.glass-card;
+    padding: v.$space-lg;
+    position: relative;
+    transition: border-color v.$transition-normal;
+
+    &:hover { border-color: rgba(232, 40, 74, 0.3); }
+
+    &--highlight {
+      background: v.$color-accent-gradient;
+      border-color: transparent;
+    }
+
+    &-icon {
+      font-size: 1.4rem;
+      display: block;
+      margin-bottom: v.$space-md;
+    }
+
+    &-title {
+      font-size: 1rem;
+      font-family: v.$font-display;
+      margin-bottom: v.$space-sm;
+    }
+
+    &-desc {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.65);
+      line-height: 1.6;
+    }
+
+    &-btn {
+      position: absolute;
+      bottom: v.$space-md;
+      right: v.$space-md;
+      width: 32px; height: 32px;
+      border-radius: 50%;
+      background: v.$color-border;
+      border: 1px solid v.$color-border;
+      color: #fff;
+      cursor: pointer;
+      @include m.flex-center;
+      font-size: 0.85rem;
+      transition: background v.$transition-fast;
+      &:hover { background: v.$color-accent; }
+    }
+  }
+}

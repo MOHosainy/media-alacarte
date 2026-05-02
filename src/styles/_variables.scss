@@ -1,0 +1,51 @@
+// ============================================================
+// DESIGN TOKENS - All values defined here, never hardcoded
+// ============================================================
+
+// Colors
+$color-bg-primary:     #0a0a0a;
+$color-bg-secondary:   #111111;
+$color-bg-card:        #161616;
+$color-accent:         #e8284a;
+$color-accent-hover:   #ff3d5a;
+$color-accent-gradient: linear-gradient(135deg, #e8284a 0%, #ff6b6b 100%);
+$color-text-primary:   #ffffff;
+$color-text-secondary: #8a8a9a;
+$color-border:         rgba(255, 255, 255, 0.08);
+
+// Typography
+$font-display:  'Syne', sans-serif;
+$font-body:     'DM Sans', sans-serif;
+
+// Spacing scale
+$space-xs:   4px;
+$space-sm:   8px;
+$space-md:   16px;
+$space-lg:   24px;
+$space-xl:   48px;
+$space-2xl:  80px;
+$space-3xl:  120px;
+
+// Border radius
+$radius-sm:   8px;
+$radius-md:   16px;
+$radius-lg:   24px;
+$radius-xl:   40px;
+$radius-full: 9999px;
+
+// Breakpoints
+$bp-mobile:  576px;
+$bp-tablet:  768px;
+$bp-desktop: 1024px;
+$bp-wide:    1280px;
+
+// Transitions
+$transition-fast:   0.2s ease;
+$transition-normal: 0.35s ease;
+$transition-slow:   0.6s cubic-bezier(0.16, 1, 0.3, 1);
+
+// Z-index layers
+$z-base:    1;
+$z-above:   10;
+$z-navbar:  100;
+$z-overlay: 200;

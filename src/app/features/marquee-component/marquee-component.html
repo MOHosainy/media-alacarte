@@ -1,0 +1,10 @@
+<div class="marquee">
+  <div class="marquee__track">
+    @for (item of repeated; track $index) {
+      <span class="marquee__item">
+        <span class="marquee__dot"></span>
+        {{ item }}
+      </span>
+    }
+  </div>
+</div>

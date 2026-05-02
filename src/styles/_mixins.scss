@@ -1,0 +1,51 @@
+@use 'variables' as v;
+
+// Responsive breakpoints
+@mixin mobile  { @media (max-width: #{v.$bp-mobile})  { @content; } }
+@mixin tablet  { @media (max-width: #{v.$bp-tablet})  { @content; } }
+@mixin desktop { @media (min-width: #{v.$bp-desktop}) { @content; } }
+
+// Flex helpers
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+// Glass card effect
+@mixin glass-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid v.$color-border;
+  backdrop-filter: blur(12px);
+  border-radius: v.$radius-lg;
+}
+
+// Section padding
+@mixin section-padding {
+  padding: v.$space-3xl v.$space-xl;
+  @include tablet { padding: v.$space-2xl v.$space-lg; }
+  @include mobile { padding: v.$space-xl v.$space-md; }
+}
+
+// Gradient text
+@mixin gradient-text {
+  background: v.$color-accent-gradient;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+// Hover lift effect
+@mixin hover-lift {
+  transition: transform v.$transition-normal, box-shadow v.$transition-normal;
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px rgba(232, 40, 74, 0.15);
+  }
+}

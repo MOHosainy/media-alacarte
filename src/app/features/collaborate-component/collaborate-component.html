@@ -1,0 +1,31 @@
+<section class="collab reveal">
+  <div class="collab__inner">
+    <span class="collab__eyebrow">Powering Collaboration Across Media</span>
+    <h2 class="collab__title">Collaborate. Elevate. Succeed.</h2>
+    <p class="collab__subtitle">
+      Empower advertisers, agencies, and media owners to work seamlessly.
+    </p>
+    <app-button variant="outline">Meet the Experts</app-button>
+
+    <!-- Stats bar -->
+    <div class="collab__stats">
+      @for (stat of stats; track stat.label) {
+        <div class="collab__stat" #statEl>
+          <span class="collab__stat-value">{{ stat.value }}</span>
+          <span class="collab__stat-label">{{ stat.label }}</span>
+        </div>
+      }
+    </div>
+
+    <!-- Team network visual -->
+    <div class="collab__network">
+      @for (member of members; track member.id; let i = $index) {
+        <div class="collab__avatar"
+             [style.--i]="i"
+             [style.--total]="members.length">
+          <img [src]="member.avatarUrl" [alt]="member.name" />
+        </div>
+      }
+    </div>
+  </div>
+</section>

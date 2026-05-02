@@ -1,0 +1,37 @@
+@use '../../../styles/variables' as v;
+
+.marquee {
+  background: v.$color-accent-gradient;
+  overflow: hidden;
+  padding: v.$space-md 0;
+
+  &__track {
+    display: flex;
+    width: max-content;
+    animation: marquee 30s linear infinite;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: v.$space-md;
+    white-space: nowrap;
+    padding: 0 v.$space-xl;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: rgba(255,255,255,0.95);
+  }
+
+  &__dot {
+    width: 6px;
+    height: 6px;
+    background: rgba(255,255,255,0.6);
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
