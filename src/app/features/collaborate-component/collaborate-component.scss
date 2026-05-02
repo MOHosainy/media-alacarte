@@ -1,135 +1,3 @@
-// @use '../../../styles/variables' as v;
-// @use '../../../styles/mixins' as m;
-
-// .collab {
-//   @include m.section-padding;
-//   text-align: center;
-
-//   &__inner {
-//     max-width: 800px;
-//     margin: 0 auto;
-//   }
-
-//   &__eyebrow {
-//     display: inline-block;
-//     font-size: 0.7rem;
-//     text-transform: uppercase;
-//     letter-spacing: 0.15em;
-//     color: v.$color-text-secondary;
-//     border: 1px solid v.$color-border;
-//     padding: 6px 16px;
-//     border-radius: v.$radius-full;
-//     margin-bottom: v.$space-lg;
-//   }
-
-//   &__title {
-//     font-size: clamp(2rem, 5vw, 3.5rem);
-//     margin-bottom: v.$space-md;
-//   }
-
-//   &__subtitle {
-//     color: v.$color-text-secondary;
-//     max-width: 400px;
-//     margin: 0 auto v.$space-xl;
-//   }
-
-//   &__stats {
-//     display: flex;
-//     justify-content: space-around;
-//     background: v.$color-accent-gradient;
-//     border-radius: v.$radius-xl;
-//     padding: v.$space-xl v.$space-lg;
-//     margin: v.$space-2xl 0;
-//     gap: v.$space-md;
-
-//     @include m.mobile {
-//       flex-direction: column;
-//       text-align: center;
-//     }
-//   }
-
-//   &__stat {
-//     display: flex;
-//     flex-direction: column;
-//     gap: v.$space-sm;
-
-//     &-value {
-//       font-family: v.$font-display;
-//       font-size: clamp(2rem, 4vw, 3rem);
-//       font-weight: 800;
-//       color: #fff;
-//     }
-
-//     &-label {
-//       font-size: 0.8rem;
-//       color: rgba(255,255,255,0.75);
-//       max-width: 160px;
-//     }
-//   }
-
-//   &__network {
-//     position: relative;
-//     width: 360px;
-//     height: 360px;
-//     margin: v.$space-2xl auto 0;
-//   }
-
-//   &__avatar {
-//     position: absolute;
-//     width: 52px;
-//     height: 52px;
-//     border-radius: 50%;
-//     border: 2px solid v.$color-accent;
-//     overflow: hidden;
-//     top: 50%;
-//     left: 50%;
-//     // Place avatars in a circle using CSS custom properties
-//     transform: translate(-50%, -50%)
-//                rotate(calc(360deg / var(--total) * var(--i)))
-//                translateY(-130px)
-//                rotate(calc(-360deg / var(--total) * var(--i)));
-//     animation: orbit 20s linear infinite;
-//     animation-delay: calc(var(--i) * -2.5s);
-
-//     img { width: 100%; height: 100%; object-fit: cover; }
-//   }
-// }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// @keyframes orbit {
-//   from { transform: translate(-50%, -50%)
-//                     rotate(calc(360deg / var(--total) * var(--i)))
-//                     translateY(-130px)
-//                     rotate(calc(-360deg / var(--total) * var(--i))); }
-//   to   { transform: translate(-50%, -50%)
-//                     rotate(calc(360deg / var(--total) * var(--i) + 360deg))
-//                     translateY(-130px)
-//                     rotate(calc(-360deg / var(--total) * var(--i) - 360deg)); }
-// }
-
-
-
 @use '../../../styles/variables' as v;
 @use '../../../styles/mixins' as m;
 
@@ -165,57 +33,69 @@
     margin: 0 auto v.$space-xl;
   }
 
+
+ 
+
+
+
   &__stats {
     display: flex;
     justify-content: space-around;
+    align-items: center;
     background: v.$color-accent-gradient;
     border-radius: v.$radius-xl;
     padding: v.$space-xl v.$space-lg;
     margin: v.$space-2xl 0;
     gap: v.$space-md;
+    flex-wrap: wrap;
+
+    @include m.tablet {
+      gap: v.$space-lg;
+      padding: v.$space-lg v.$space-md;
+    }
 
     @include m.mobile {
       flex-direction: column;
-      text-align: center;
+      gap: v.$space-md;
+      padding: v.$space-lg v.$space-md;
     }
   }
 
   &__stat {
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: v.$space-sm;
 
     &-value {
       font-family: v.$font-display;
-      font-size: clamp(2rem, 4vw, 3rem);
+      font-size: clamp(1.5rem, 4vw, 3rem); 
       font-weight: 800;
       color: #fff;
     }
 
     &-label {
       font-size: 0.8rem;
-      color: rgba(255,255,255,0.75);
+      color: rgba(255, 255, 255, 0.75);
       max-width: 160px;
     }
   }
 
-  // &__network {
-  //   position: relative;
-  //   width: 100%;
-  //   max-width: 600px;
-  //   height: 300px;
-  //   margin: v.$space-2xl auto 0;
-  // }
-
   &__network {
-  position: relative;
-  width: 100%;
-  max-width: 600px;
-  height: 280px;
-  margin: v.$space-2xl auto 0;
-}
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    height: 280px;
+    margin: v.$space-2xl auto 0;
 
+    @include m.tablet {
+      height: 220px;
+    }
 
+    @include m.mobile {
+      height: 160px;
+    }
+  }
 
   &__svg {
     position: absolute;
@@ -234,6 +114,7 @@
     border: 2px solid rgba(232, 40, 74, 0.5);
     box-shadow: 0 0 16px rgba(232, 40, 74, 0.2);
     animation: floatUp 3s ease-in-out infinite alternate;
+    transition: transform 0.3s ease;
 
     img {
       width: 100%;
@@ -241,49 +122,55 @@
       object-fit: cover;
     }
 
-    // &--0 { top: 160px; left:  8%; animation-delay: 0.0s; }
-    // &--1 { top:  70px; left: 22%; animation-delay: 0.3s; }
-    // &--2 { top:  20px; left: 44%; animation-delay: 0.6s; }
-    // &--3 { top:  70px; left: 66%; animation-delay: 0.9s; }
-    // &--4 { top: 160px; left: 80%; animation-delay: 1.2s; }
-    // &--5 { top: 140px; left: 35%; animation-delay: 1.5s; }
-    // &--6 { top: 140px; left: 55%; animation-delay: 1.8s; }
-    // &--7 { top:  90px; left: 44%; animation-delay: 2.1s; }
-
-
-    // ✅ فوق — على حافة الـ ellipse العليا
-&--0 { top:  20px; left: 43%; animation-delay: 0.0s; }  // قمة
-&--1 { top:  60px; left: 18%; animation-delay: 0.3s; }  // فوق شمال
-&--2 { top:  60px; left: 68%; animation-delay: 0.6s; }  // فوق يمين
-&--3 { top: 150px; left:  3%; animation-delay: 0.9s; }  // شمال
-&--4 { top: 150px; left: 83%; animation-delay: 1.2s; }  // يمين
-&--5 { top: 220px; left: 85%; animation-delay: 1.5s; }  // تحت شمال
-&--6 { top: 150px; left: 45%; animation-delay: 1.8s; }  // تحت يمين
-&--7 { top: 150px; left: 3%; animation-delay: 2.1s; }  // وسط
-
-
+    &--0 { top: 20px;  left: 43%; }
+    &--1 { top: 60px;  left: 18%; }
+    &--2 { top: 60px;  left: 68%; }
+    &--3 { top: 150px; left: 3%;  }
+    &--4 { top: 150px; left: 83%; }
+    &--5 { top: 220px; left: 70%; }
+    &--6 { top: 220px; left: 30%; }
+    &--7 { top: 120px; left: 45%; }
 
     &:hover {
       transform: scale(1.2);
-      // border-color: v.$color-primary;
-        border-color: v.$color-accent; // ✅
-
       z-index: 2;
+      border-color: v.$color-accent;
+    }
+
+    // ✅ تابلت
+    @include m.tablet {
+      width: 40px;
+      height: 40px;
+
+      &.collab__avatar--0 { top: 10px;  left: 45%; }
+      &.collab__avatar--1 { top: 40px;  left: 10%; }
+      &.collab__avatar--2 { top: 40px;  left: 70%; }
+      &.collab__avatar--3 { top: 110px; left: 5%;  }
+      &.collab__avatar--4 { top: 110px; left: 80%; }
+      &.collab__avatar--5 { top: 160px; left: 60%; }
+      &.collab__avatar--6 { top: 160px; left: 25%; }
+      &.collab__avatar--7 { top: 90px;  left: 45%; }
+    }
+
+    // ✅ موبايل
+    @include m.mobile {
+      width: 30px;
+      height: 30px;
+
+      &.collab__avatar--0 { top: 5px;   left: 45%; }
+      &.collab__avatar--1 { top: 30px;  left: 5%;  }
+      &.collab__avatar--2 { top: 30px;  left: 75%; }
+      &.collab__avatar--3 { top: 80px;  left: 5%;  }
+      &.collab__avatar--4 { top: 80px;  left: 80%; }
+      &.collab__avatar--5 { top: 120px; left: 60%; }
+      &.collab__avatar--6 { top: 120px; left: 25%; }
+      &.collab__avatar--7 { top: 70px;  left: 45%; }
     }
   }
 }
 
+/* ================= ANIMATION ================= */
 @keyframes floatUp {
-  from { transform: translateY(0);    }
+  from { transform: translateY(0); }
   to   { transform: translateY(-8px); }
-}
-
-@media (max-width: 768px) {
-  .collab__network {
-    height: 220px;
-  }
-  .collab__avatar {
-    width: 40px;
-    height: 40px;
-  }
 }

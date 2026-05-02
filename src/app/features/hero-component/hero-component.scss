@@ -10,7 +10,6 @@
   padding: calc(v.$space-3xl + 80px) v.$space-xl v.$space-3xl;
   overflow: hidden;
 
-  /* ================= BLOBS ================= */
   &__blob {
     position: absolute;
     border-radius: 50%;
@@ -66,7 +65,6 @@
     z-index: 1;
   }
 
-  /* ================= OVERLAY ================= */
   &__overlay {
     position: absolute;
     inset: 0;
@@ -86,7 +84,6 @@
     z-index: 3;
   }
 
-  /* ================= TOP BUTTON ================= */
   &__action-top {
     align-self: flex-start;
     transform: translate(-18px, -37px);
@@ -99,7 +96,6 @@
     }
   }
 
-  /* ================= BOTTOM BUTTON ================= */
   &__learn-more {
     align-self: flex-end;
     transform: translate(-12px, 35px) ;
@@ -128,7 +124,6 @@
     }
   }
 
-  /* ================= TABLET ================= */
   @media (max-width: 768px) {
     &__image {
       height: 240px;
@@ -155,7 +150,6 @@
 }
   }
 
-  /* ================= MOBILE ================= */
  
  @media (max-width: 480px) {
     &__image-container {
@@ -195,7 +189,6 @@
       position: absolute;
       bottom: 6px;
      right: 3px;
-      //دخّلهجوهالـcurveناحيةاليمينtransform: none;
       font-size: 8px;
       padding: 4px 5px;
       margin-top: 0;

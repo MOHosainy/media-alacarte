@@ -1,12 +1,3 @@
-// import { Component } from '@angular/core';
-
-// @Component({
-//   selector: 'app-collaborate-component',
-//   imports: [],
-//   templateUrl: './collaborate-component.html',
-//   styleUrl: './collaborate-component.scss',
-// })
-// export class CollaborateComponent {}
 import { Component, OnInit, AfterViewInit, inject, ElementRef, QueryList, ViewChildren } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ContentService } from '../../core/services/content-service';
@@ -34,7 +25,6 @@ export class CollaborateComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    // Animate stat numbers when in viewport
     const observer = new IntersectionObserver(
       entries => entries.forEach(e => {
         if (e.isIntersecting) {

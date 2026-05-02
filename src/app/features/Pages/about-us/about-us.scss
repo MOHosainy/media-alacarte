@@ -97,7 +97,6 @@
   color: rgba(255,255,255,0.7);
 }
 
-/* ================= ANIMATIONS ================= */
 
 @keyframes fadeIn {
   from { opacity: 0; }
@@ -126,7 +125,6 @@
   }
 }
 
-/* ================= RESPONSIVE ================= */
 
 @include m.tablet {
   .about__stats {

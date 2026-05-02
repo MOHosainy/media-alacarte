@@ -8,7 +8,6 @@
   overflow: hidden;
   color: #fff;
 
-  /* ===== Background Glow ===== */
   &__bg {
     position: absolute;
     width: 500px;
@@ -80,7 +79,6 @@
   }
 }
 
-/* ===== Animations ===== */
 @keyframes fadeUp {
   from {
     opacity: 0;

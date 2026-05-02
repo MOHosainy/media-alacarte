@@ -1,19 +1,9 @@
-// import { Injectable } from '@angular/core';
-
-// @Injectable({
-//   providedIn: 'root',
-// })
-// export class ContentService {}
 import { Injectable } from '@angular/core';
 import {
   NavItem, ServiceCard, SolutionCard,
   StatItem, TeamMember, FooterColumn
 } from '../models/content';
 
-/**
- * ContentService centralizes all static content.
- * No hardcoded values in components — all data flows from here.
- */
 @Injectable({ providedIn: 'root' })
 export class ContentService {
 
@@ -26,7 +16,6 @@ export class ContentService {
       { label: 'Request a Demo', route: '/request-a-demo' },
       { label: 'Contact Us',   route: '/contact'   },
       { label: 'About Us',     route: '/about'     },
-      //  { label: 'Login',        route: '/login'     },
     ];
   }
 
@@ -36,7 +25,7 @@ export class ContentService {
     subtitle:
       'Reach out to our team and discover how Media Ala Carte can transform your advertising workflow.',
     
-    email: 'hello@mediaalacarte.com',
+    email: 'mohamedelhoseeny34@gmail.com',
     phone: '01007012871',
     location: 'Cairo, Egypt',
 
@@ -64,8 +53,6 @@ getLoginData() {
   };
 }
 
-
-
 getAboutData() {
   return {
     title: 'About Media Alacarte',
@@ -89,10 +76,6 @@ getAboutData() {
     ],
   };
 }
-
-
-
-
 
 
 getBenefitsData() {
@@ -282,15 +265,6 @@ getMarqueeItems2(): string[] {
       avatarUrl: `https://i.pravatar.cc/80?img=${i + 10}`,
     }));
   }
-
-
-
-
-
-
-
-
-
 
 
 

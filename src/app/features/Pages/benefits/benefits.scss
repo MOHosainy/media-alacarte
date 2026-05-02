@@ -95,7 +95,6 @@
   font-size: 0.95rem;
 }
 
-/* ================= ANIMATION ================= */
 
 @keyframes fadeIn {
   from { opacity: 0; }
@@ -113,7 +112,6 @@
   }
 }
 
-/* ================= RESPONSIVE ================= */
 
 @include m.tablet {
   .benefits__grid {

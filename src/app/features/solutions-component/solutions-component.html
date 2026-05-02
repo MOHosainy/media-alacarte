@@ -20,7 +20,6 @@
       </div>
     </div>
 
-    <!-- Main Card (Campaign Planning) -->
     @if (solutions[0]; as card) {
       <div class="solutions__card solutions__card--main">
         <span class="solutions__card-icon">{{ card.icon }}</span>
@@ -30,7 +29,6 @@
       </div>
     }
 
-    <!-- Bottom Grid -->
     <div class="solutions__grid">
       @for (card of solutions.slice(1); track card.id) {
         <div class="solutions__card">

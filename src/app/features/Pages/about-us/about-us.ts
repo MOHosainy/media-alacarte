@@ -11,6 +11,5 @@ export class AboutUs {
 
   private contentService = inject(ContentService);
 
-  // 👇 الداتا اللي جاية من السيرفز
   about = this.contentService.getAboutData();
 }
