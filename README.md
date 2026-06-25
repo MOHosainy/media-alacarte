@@ -1,59 +1,92 @@
-# MediaAlacarte
+# Media Alacarte - Angular Frontend Project
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.0.
+A modern and responsive **Angular frontend application** built as part of a coding challenge for the **Frontend Engineer position at Media Alacarte**.
 
-## Development server
+The project demonstrates clean architecture, reusable components, and scalable frontend structure using Angular best practices.
 
-To start a local development server, run:
+---
+
+## 🔗 Links
+
+-  Live Demo: https://agent-69f62518836dbc1--melodious-banoffee-22b284.netlify.app/
+-  GitHub Repo: https://github.com/MOHosainy/media-alacarte
+
+---
+
+## 📌 Project Overview
+
+This application is a frontend Angular project inspired by a media/content browsing experience.  
+It focuses on building a smooth and modern UI/UX with maintainable and scalable code structure.
+
+The main goal of the project was to demonstrate:
+
+- Angular component-based architecture
+- Clean and scalable folder structure
+- Responsive UI design across all devices
+- Routing and navigation between pages
+- Reusable and modular components
+- Real-world frontend development practices
+
+---
+
+##  Features
+
+-  Fully responsive design (mobile, tablet, desktop)
+-  Multi-page navigation using Angular Router
+-  Modular and reusable components
+-  Optimized frontend performance
+-  Clean and modern UI design
+-  Scalable component-based architecture
+
+---
+
+##  Tech Stack
+
+- Angular
+- TypeScript
+- HTML5
+- CSS3 / SCSS
+- RxJS
+- Angular Router
+- Lazy loading
+
+---
+
+## 📁 Project Structure
+src/
+└── app/
+    ├── components/   # Reusable UI components
+    ├── pages/        # Application views/pages
+    ├── services/     # Business logic & data handling
+    ├── shared/       # Shared modules and utilities
+assets/
+environments/
+
+---
+
+##  How to Run Locally
 
 ```bash
+# Clone the repository
+git clone https://github.com/MOHosainy/media-alacarte.git
+
+# Navigate to project directory
+cd media-alacarte
+
+# Install dependencies
+npm install
+
+# Run development server
 ng serve
+
+# Open in browser
+http://localhost:4200
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+---
 
-## Code scaffolding
+## Author
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
+Mohamed Alhosainy  
+Frontend Developer
 ```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
